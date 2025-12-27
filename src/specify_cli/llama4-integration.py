@@ -1,20 +1,9 @@
 import click
-import os
-import requests
+from huggingface_hub import InferenceClient
 
 @click.command()
-@click.option('--prompt', help='Le prompt pour générer du code')
-@click.option('--lang', help='Le langage de programmation (ex: python, javascript)')
-def meta_ai_command(prompt, lang):
-    api_key = os.environ.get('META_AI_API_KEY')
-    endpoint = 'https://api.meta-ai.com/v1/code/generate'  # Endpoint personnalisé pour la génération de code
-    params = {
-        'prompt': prompt,
-        'lang': lang,
-        'max_tokens': 200,  # Ajuste selon tes besoins
-    }
-    response = requests.post(endpoint, json=params, headers={'Authorization': f'Bearer {api_key}'})
-    if response.status_code == 200:
-        click.echo(response.json()['code'])
-    else:
-        click.echo(f'Erreur: {response.status_code}')
+@click.option('--prompt', help='Le prompt pour Llama 4')
+def llama4_command(prompt):
+    client = InferenceClient("meta-llama/Llama-4")
+    response = client.text_generation(prompt, max_new_tokens=200)
+    click.echo(response.generated_text)
