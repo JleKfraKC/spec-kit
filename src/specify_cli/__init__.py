@@ -52,6 +52,9 @@ import readchar
 import ssl
 import truststore
 from datetime import datetime, timezone
+from .meta_ai import meta_ai_command
+
+cli.add_command(meta_ai_command)
 
 ssl_context = truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 client = httpx.Client(verify=ssl_context)
@@ -224,7 +227,7 @@ AGENT_CONFIG = {
         "name": "Llama4",
         "folder": ".llama4/",
         "install_url": "hhttps://www.meta.com/fr-fr/help/",
-        "requires_cli": True,
+        "requires_cli": False,
     },    
     "bob": {
         "name": "IBM Bob",
