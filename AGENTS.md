@@ -47,7 +47,7 @@ Specify supports multiple AI agents by generating agent-specific command files a
 | **Amazon Q Developer CLI** | `.amazonq/prompts/`    | Markdown | `q`             | Amazon Q Developer CLI      |
 | **Amp**                    | `.agents/commands/`    | Markdown | `amp`           | Amp CLI                     |
 | **SHAI**                   | `.shai/commands/`      | Markdown | `shai`          | SHAI CLI                    |
-| **Llama4**                 | `.llama4/commands/`    | Markdown | `llama4`        | Llama4 CLI                  |
+| **Llama4**                 | `.llama4/commands/`    | Markdown | `llama4`        | Llama4 API                  |
 | **IBM Bob**                | `.bob/commands/`       | Markdown | N/A (IDE-based) | IBM Bob IDE                 |
 
 ### Step-by-Step Integration Guide
@@ -317,7 +317,6 @@ Require a command-line tool to be installed:
 - **Qoder CLI**: `qoder` CLI
 - **Amp**: `amp` CLI
 - **SHAI**: `shai` CLI
-- **Llama4**: `llama4` CLI 
 
 ### IDE-Based Agents
 
