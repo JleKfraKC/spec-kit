@@ -54,7 +54,7 @@ import truststore
 from datetime import datetime, timezone
 from .llama4 import llama4_command
 
-cli.add_command(llama4_command)
+cli.add_command(llama4_command, "llama4")
 
 ssl_context = truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 client = httpx.Client(verify=ssl_context)
