@@ -52,9 +52,9 @@ import readchar
 import ssl
 import truststore
 from datetime import datetime, timezone
-from .meta_ai import meta_ai_command
+from .llama4 import llama4_command
 
-cli.add_command(meta_ai_command)
+cli.add_command(llama4_command)
 
 ssl_context = truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 client = httpx.Client(verify=ssl_context)
